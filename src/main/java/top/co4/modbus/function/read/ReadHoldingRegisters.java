@@ -1,0 +1,44 @@
+package top.co4.modbus.function;
+
+import top.co4.modbus.code.ExceptionCode;
+import top.co4.modbus.code.FunctionCode;
+import top.co4.modbus.exception.ModbusException;
+import top.co4.modbus.module.Modbus;
+import top.co4.modbus.msg.Generate;
+import top.co4.modbus.msg.Parse;
+import top.co4.modbus.utils.SocketUtil;
+
+import java.io.IOException;
+
+/**
+ * @author CodeXYW
+ * @date 2022/7/19 18:04
+ * 保持型寄存器
+ */
+public class ReadHoldingRegisters {
+
+    public static Object readHolding(Modbus modbus) throws ModbusException, IOException {
+        modbus.setFunctionCode(FunctionCode.READ_HOLDING_REGISTERS);
+        //获取报文信息
+        modbus.setMsg(Generate.getReadMsg(modbus));
+        //发送并接收返回值
+        String value = SocketUtil.socketSend(modbus, getByteLength(modbus.getSize()));
+        if (!SocketUtil.checkSocketValue(value)){
+            throw new ModbusException(ExceptionCode.SOCKET_VALUE_NULL_ERROR);
+        }
+        modbus.setValue(value);
+
+        return Parse.parseNumberValue(modbus);
+    }
+
+    /***
+     * @Description //TODO 计算接收信息
+     * @Param: [size]
+     * @Return: int
+     * @Author CodeXYW
+     * @Date 2022/7/19 12:21
+     */
+    private static int getByteLength(int size){
+        return 5+size*2;
+    }
+}
