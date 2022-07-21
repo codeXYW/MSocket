@@ -4,16 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4029b195-3a39-4978-b3d3-55867ca433b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4029b195-3a39-4978-b3d3-55867ca433b6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -34,10 +43,100 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "E:/Java/note",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "last_opened_file_path": "E:/Java/modbus/src/main/resources",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "http.proxy",
+    "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Java\modbus\src\main\resources" />
+      <recent name="E:\Java\modbus\src\main\java\top\co4\modbus\lib" />
+      <recent name="E:\Java\modbus\src\main\java\top\co4\modbus\utils" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="top.co4.modbus.code" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.top.co4.modbus.test.Test">
+    <configuration name="Modbus4jUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tcb.modbus.Modbus4jUtils" />
+      <module name="modbus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tcb.modbus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModbusTcpMaster" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.co4.modbus.test.ModbusTcpMaster" />
+      <module name="modbus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.co4.modbus.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="top.co4.modbus.function.read.ReadCoilsRegisters" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.co4.modbus.function.read.ReadCoilsRegisters" />
+      <module name="modbus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.co4.modbus.function.read.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="top.co4.modbus.test.ModbusTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.co4.modbus.test.ModbusTest" />
+      <module name="modbus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.co4.modbus.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="top.co4.modbus.test.Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.co4.modbus.test.Test" />
+      <module name="modbus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.co4.modbus.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.top.co4.modbus.test.Test" />
+        <item itemvalue="Application.top.co4.modbus.function.read.ReadCoilsRegisters" />
+        <item itemvalue="Application.ModbusTcpMaster" />
+        <item itemvalue="Application.Modbus4jUtils" />
+        <item itemvalue="Application.top.co4.modbus.test.ModbusTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -46,7 +145,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658017172066</updated>
+      <workItem from="1658017173465" duration="4785000" />
+      <workItem from="1658026343358" duration="14793000" />
+      <workItem from="1658115211361" duration="40558000" />
+      <workItem from="1658277418749" duration="39860000" />
+      <workItem from="1658376286574" duration="38000" />
     </task>
+    <task id="LOCAL-00001" summary="2022年7月21日12:02:06 第一次提交">
+      <created>1658376138724</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1658376138724</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2022年7月21日12:02:06 第一次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022年7月21日12:02:06 第一次提交" />
   </component>
 </project>
