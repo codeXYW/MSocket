@@ -4,25 +4,6 @@
 # 使用详情
 参考 Test.java
 ~~~
-package top.co4.modbus.test;
-
-import lombok.extern.slf4j.Slf4j;
-import top.co4.modbus.code.DataType;
-import top.co4.modbus.exception.ModbusException;
-import top.co4.modbus.function.read.ReadCoilsRegisters;
-import top.co4.modbus.function.read.ReadDiscreteInputRegisters;
-import top.co4.modbus.function.read.ReadHoldingRegisters;
-import top.co4.modbus.function.read.ReadInputRegisters;
-import top.co4.modbus.function.write.WriteCoilRegisters;
-import top.co4.modbus.function.write.WriteCoilsRegisters;
-import top.co4.modbus.function.write.WriteRegister;
-import top.co4.modbus.function.write.WriteRegisters;
-import top.co4.modbus.module.Modbus;
-
-import java.io.IOException;
-import java.net.Socket;
-import java.util.List;
-
 /**
  * @author CodeXYW
  * @date 2022/7/17 8:23
