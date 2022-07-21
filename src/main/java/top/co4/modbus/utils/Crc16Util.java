@@ -1,4 +1,4 @@
-package cn.msocket.modbus.utils;
+package top.co4.modbus.utils;
 
 
 /**
@@ -51,6 +51,6 @@ public class Crc16Util {
         //高位在前地位在后
         //return result.substring(2, 4) + " " + result.substring(0, 2);
         // 交换高低位，低位在前高位在后
-        return result.substring(2, 4) + " " + result.substring(0, 2);
+        return result.substring(2, 4)+result.substring(0, 2);
     }
 }

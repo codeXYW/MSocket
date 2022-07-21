@@ -1,4 +1,4 @@
-package top.co4.modbus.function;
+package top.co4.modbus.function.read;
 
 import lombok.extern.slf4j.Slf4j;
 import top.co4.modbus.code.ExceptionCode;
@@ -20,14 +20,27 @@ import java.util.List;
 @Slf4j
 public class ReadCoilsRegisters {
 
+    /**
+     * TODO 生成读线圈报文
+     * @param slaveId 从站地址
+     * @param offset 寄存器地址
+     * @param size 读取的个数
+     * @return
+     * @throws ModbusException
+     */
+    public static String getReadCoilsMsg(int slaveId, int offset, int size) throws ModbusException {
+        byte functionCode=FunctionCode.READ_COILS;
+        return Generate.getReadMsg(slaveId, functionCode, offset, size);
+    }
+
     /***
      * @Description //TODO 入口
      * @Date 2022/7/19 12:23
      */
     public static List<Boolean> readCoils(Modbus modbus) throws ModbusException, IOException {
+        modbus.setFunctionCode(FunctionCode.READ_COILS);
         //生成报文
         modbus.setMsg(Generate.getReadMsg(modbus));
-        modbus.setFunctionCode(FunctionCode.READ_COILS);
         //解析值
         String value = SocketUtil.socketSend(modbus,getByteLength(modbus.getSize()));
         if (!SocketUtil.checkSocketValue(value)){

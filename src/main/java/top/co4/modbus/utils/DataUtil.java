@@ -1,4 +1,4 @@
-package cn.msocket.modbus.utils;
+package top.co4.modbus.utils;
 
 /**
  * TODO:进制转换
@@ -16,8 +16,8 @@ public class DataUtil {
     /**
      * 十进制转十六进制
      **/
-    public static String decToHex(String dec) {
-        return Integer.toHexString(Integer.parseInt(dec));
+    public static String decToHex(Integer dec) {
+        return Integer.toHexString(dec);
     }
 
     /**
@@ -115,6 +115,29 @@ public class DataUtil {
             }
         }
         return sum.toString();
+    }
+
+    public static String hexStringToString(String s) {
+        if (s == null || s.equals("")) {
+            return null;
+        }
+        s = s.replace(" ", "");
+        byte[] baKeyword = new byte[s.length() / 2];
+        for (int i = 0; i < baKeyword.length; i++) {
+            try {
+                baKeyword[i] = (byte) (0xff & Integer.parseInt(s.substring(i * 2, i * 2 + 2), 16));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        try {
+            s = new String(baKeyword, "UTF-8");
+            new String();
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return s;
     }
 
 }

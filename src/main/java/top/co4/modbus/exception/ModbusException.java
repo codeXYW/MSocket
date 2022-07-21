@@ -1,4 +1,4 @@
-package top.co4.modbus;
+package top.co4.modbus.exception;
 
 import top.co4.modbus.code.ExceptionCode;
 
@@ -8,10 +8,9 @@ import top.co4.modbus.code.ExceptionCode;
  */
 public class ModbusException extends Exception{
     byte code;
-    String msg;
 
     public ModbusException(byte code) {
+        super(ExceptionCode.getExceptionMessage(code));
         this.code = code;
-        this.msg = ExceptionCode.getExceptionMessage(code);
     }
 }

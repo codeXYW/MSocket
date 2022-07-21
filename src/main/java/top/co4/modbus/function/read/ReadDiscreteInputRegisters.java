@@ -1,4 +1,4 @@
-package top.co4.modbus.function;
+package top.co4.modbus.function.read;
 
 import top.co4.modbus.code.ExceptionCode;
 import top.co4.modbus.code.FunctionCode;
@@ -18,11 +18,27 @@ import java.util.List;
  */
 public class ReadDiscreteInputRegisters {
 
+    /**
+     * TODO 生成读离散输入型寄存器报文
+     * @param slaveId 从站地址
+     * @param offset 寄存器地址
+     * @param size 读取的个数
+     * @return
+     * @throws ModbusException
+     */
+    public static String getReadDiscreteInputMsg(int slaveId, int offset, int size) throws ModbusException {
+        byte functionCode=FunctionCode.READ_DISCRETE_INPUTS;
+        return Generate.getReadMsg(slaveId, functionCode, offset, size);
+    }
+
+    /**
+     * @Description //TODO 入口
+     * @Date 2022/7/21 11:36
+     */
     public static List<Boolean> readDiscreteInput(Modbus modbus) throws ModbusException, IOException {
         modbus.setFunctionCode(FunctionCode.READ_DISCRETE_INPUTS);
         //生成报文信息
-        String msg = Generate.getReadMsg(modbus);
-        modbus.setMsg(msg);
+        modbus.setMsg(Generate.getReadMsg(modbus));
         String value= SocketUtil.socketSend(modbus,getByteLength(modbus.getSize()));
         if (!SocketUtil.checkSocketValue(value)){
             throw new ModbusException(ExceptionCode.SOCKET_VALUE_NULL_ERROR);
