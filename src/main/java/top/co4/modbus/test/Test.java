@@ -109,7 +109,8 @@ public class Test {
         modbus.setOffset(0);
         modbus.setSocket(socket);
         modbus.setDataType(DataType.BOOLE);
-        WriteCoilRegisters.writeCoil(modbus, true);
+        boolean b = WriteCoilRegisters.writeCoil(modbus, true);
+        System.out.println(b);
     }
 
     /**
@@ -122,7 +123,8 @@ public class Test {
         modbus.setOffset(0);
         modbus.setSocket(socket);
         modbus.setDataType(DataType.INTEGER);
-        WriteRegister.writeRegister(modbus, 2);
+        boolean b = WriteRegister.writeRegister(modbus, 2);
+        System.out.println(b);
     }
 
     /**
@@ -135,7 +137,8 @@ public class Test {
         modbus.setOffset(1);
         modbus.setSocket(socket);
         modbus.setDataType(DataType.BOOLE);
-        WriteCoilsRegisters.writeCoils(modbus, new boolean[]{false,true,true,true,true,true,true,true,true});
+        boolean b = WriteCoilsRegisters.writeCoils(modbus, new boolean[]{false, true, true, true, true, true, true, true, true});
+        System.out.println(b);
     }
 
     /**

@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4029b195-3a39-4978-b3d3-55867ca433b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/co4/modbus/code/ExceptionCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/co4/modbus/code/ExceptionCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/co4/modbus/function/write/WriteCoilsRegisters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/co4/modbus/function/write/WriteCoilsRegisters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/co4/modbus/function/write/WriteRegisters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/co4/modbus/function/write/WriteRegisters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/co4/modbus/msg/Generate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/co4/modbus/msg/Generate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/co4/modbus/msg/Parse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/co4/modbus/msg/Parse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/top/co4/modbus/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/co4/modbus/test/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,20 +39,21 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Java/modbus/src/main/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "E:/Java/modbus/src/main/resources",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "http.proxy",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Java\modbus\src\main\resources" />
@@ -158,7 +154,7 @@
       <workItem from="1658277418749" duration="39860000" />
       <workItem from="1658376286574" duration="1221000" />
       <workItem from="1658387968304" duration="1130000" />
-      <workItem from="1658391368116" duration="2133000" />
+      <workItem from="1658391368116" duration="2536000" />
     </task>
     <task id="LOCAL-00001" summary="2022年7月21日12:02:06 第一次提交">
       <created>1658376138724</created>
