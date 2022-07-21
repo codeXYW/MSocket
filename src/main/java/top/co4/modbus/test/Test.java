@@ -148,7 +148,8 @@ public class Test {
         modbus.setOffset(0);
         modbus.setSocket(socket);
         modbus.setDataType(DataType.FLOAT);
-        WriteRegisters.writeRegisters(modbus,new float[]{1,12,5});
+        boolean b = WriteRegisters.writeRegisters(modbus, new float[]{1, 12, 5});
+        System.out.println(b);
     }
 
     /**
@@ -161,7 +162,8 @@ public class Test {
         modbus.setOffset(0);
         modbus.setSocket(socket);
         modbus.setDataType(DataType.INTEGER);
-        WriteRegisters.writeRegisters(modbus,new int[]{1,12,5});
+        boolean b = WriteRegisters.writeRegisters(modbus, new int[]{1, 12, 5});
+        System.out.println(b);
     }
 
     public static void main(String[] args) throws Exception {
@@ -172,8 +174,9 @@ public class Test {
 //        writeCoil();
 //        writeRegister();
 //        writeCoils();
-//        writeRegistersInt();
-//        writeRegistersFloat();
+        writeRegistersInt();
+//       writeRegistersFloat();
+        System.out.println("欢迎使用MSocket");
     }
 
 }

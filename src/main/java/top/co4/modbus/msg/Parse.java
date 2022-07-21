@@ -91,5 +91,14 @@ public class Parse {
         }
     }
 
+    /**
+     * @Description //TODO 校验写入多个数据是否成功
+     * @Date 2022/7/21 17:25
+     */
+    public static boolean isSuccess(String s,int size){
+        String data = s.substring(8, 12);
+        return size==DataUtil.hexToDec(data);
+    }
+
 
 }

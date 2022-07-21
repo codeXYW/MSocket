@@ -5,6 +5,7 @@ import top.co4.modbus.code.FunctionCode;
 import top.co4.modbus.exception.ModbusException;
 import top.co4.modbus.module.Modbus;
 import top.co4.modbus.msg.Generate;
+import top.co4.modbus.msg.Parse;
 import top.co4.modbus.utils.SocketUtil;
 
 /**
@@ -19,11 +20,12 @@ public class WriteCoilsRegisters {
     public static boolean writeCoils(Modbus modbus , boolean[] values) throws Exception {
         modbus.setFunctionCode(FunctionCode.WRITE_COILS);
         modbus.setMsg(Generate.getWritesMsg(modbus,values));
-        String s = SocketUtil.socketSend(modbus, (modbus.getMsg().length() / 2));
+        String s = SocketUtil.socketSend(modbus, 16);
 
         if (!SocketUtil.checkSocketValue(s)){
             throw new ModbusException(ExceptionCode.SOCKET_VALUE_NULL_ERROR);
         }
-        return s.equals(modbus.getMsg());
+
+        return  Parse.isSuccess(s,values.length);
     }
 }

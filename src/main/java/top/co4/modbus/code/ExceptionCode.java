@@ -14,6 +14,8 @@ public class ExceptionCode {
 
     public static final byte SOCKET_VALUE_NULL_ERROR=5;
 
+    public static final byte SOCKET_VALUE_ERROR=6;
+
 
     public ExceptionCode() {
     }
