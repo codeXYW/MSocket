@@ -1,6 +1,5 @@
 package top.co4.modbus.function.read;
 
-import lombok.extern.slf4j.Slf4j;
 import top.co4.modbus.code.ExceptionCode;
 import top.co4.modbus.code.FunctionCode;
 import top.co4.modbus.exception.ModbusException;
@@ -17,7 +16,6 @@ import java.util.List;
  * @date 2022/7/18 14:27
  * 线圈寄存器
  */
-@Slf4j
 public class ReadCoilsRegisters {
 
     /**
@@ -28,7 +26,7 @@ public class ReadCoilsRegisters {
      * @return
      * @throws ModbusException
      */
-    public static String getReadCoilsMsg(int slaveId, int offset, int size) throws ModbusException {
+    public static String readCoils(int slaveId, int offset, int size) throws ModbusException {
         byte functionCode=FunctionCode.READ_COILS;
         return Generate.getReadMsg(slaveId, functionCode, offset, size);
     }

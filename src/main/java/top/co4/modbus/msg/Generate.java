@@ -1,6 +1,5 @@
 package top.co4.modbus.msg;
 
-import lombok.extern.slf4j.Slf4j;
 import top.co4.modbus.code.FunctionCode;
 import top.co4.modbus.exception.ModbusException;
 import top.co4.modbus.module.Modbus;
@@ -9,15 +8,16 @@ import top.co4.modbus.utils.DataUtil;
 import top.co4.modbus.utils.ModbusUtil;
 
 import java.util.Locale;
+import java.util.logging.Logger;
+
 
 /**
  * @author CodeXYW
  * @date 2022/7/18 13:52
  */
-@Slf4j
 public class Generate {
 
-
+    public static Logger logger = Logger.getLogger(Generate.class.toString());
     /***
      * @Description //TODO 读PLC数据报文
      * @Date 2022/7/18 14:19
@@ -29,7 +29,7 @@ public class Generate {
         String crc = Crc16Util.getCRC(sb.toString());
         //拼接
         String msg = sb.append(crc).toString().toUpperCase();
-        log.info("报文信息:{}", msg);
+        logger.info(msg);
         return msg;
     }
 
@@ -54,7 +54,7 @@ public class Generate {
         String crc = Crc16Util.getCRC(sb.toString());
         //拼接
         String msg = sb.append(crc).toString().toUpperCase();
-        log.info("报文信息:{}", msg);
+        logger.info(msg);
         return msg;
     }
 
@@ -83,7 +83,7 @@ public class Generate {
                 //crc校验
                 String s0 = Crc16Util.getCRC(sb0.toString());
                 String booleansMsg = sb0.append(s0).toString().toUpperCase();
-                log.info("报文信息:{}", booleansMsg);
+                logger.info(booleansMsg);
                 return booleansMsg;
             case 2:
                 //生成批量写入保持型寄存器   从机地址  功能码  起始地址高位  起始地址低位  数量高位  数量低位  字节数  0001高位  0001低位  0002高位  0002低位  CRC高位  CRC低位
@@ -93,7 +93,7 @@ public class Generate {
                 //crc校验
                 String s1 = Crc16Util.getCRC(sb1.toString());
                 String floatsMsg = sb1.append(s1).toString().toUpperCase();
-                log.info("报文信息:{}", floatsMsg);
+                logger.info(floatsMsg);
                 return floatsMsg;
             case 3:
                 int[] ints= (int[]) values;
@@ -102,7 +102,7 @@ public class Generate {
                 //crc校验
                 String s2 = Crc16Util.getCRC(sb2.toString());
                 String intsMsg = sb2.append(s2).toString().toUpperCase();
-                log.info("报文信息:{}", intsMsg);
+                logger.info(intsMsg);
                 return intsMsg;
             default:
                 return null;
@@ -124,7 +124,7 @@ public class Generate {
      * @Description //TODO 写入单个数据时值转换
      * @Date 2022/7/20 21:30
      */
-    private static String getOneValue(Object value, int dataType) {
+    public static String getOneValue(Object value, int dataType) {
 
         switch (dataType) {
             //写入的数据为开关类型
@@ -137,7 +137,9 @@ public class Generate {
                 return Integer.toHexString(Float.floatToIntBits(f));
             //写入的数据为整型
             case 3:
-                String str = String.valueOf(value);
+                //无论用户给的是整数还是浮点数都转换成浮点数来处理
+                float x=(int) value*10/10;
+                String str = String.valueOf(x);
                 int idx = str.lastIndexOf(".");
                 String strNum = str.substring(0,idx);
                 int num = Integer.parseInt(strNum);
@@ -214,7 +216,6 @@ public class Generate {
             for (float value : floats) {
                 float f = value;
                 String s = Integer.toHexString(Float.floatToIntBits(f));
-                System.out.println(s);
                 msg.append(ModbusUtil.getString(s));
             }
         } else {

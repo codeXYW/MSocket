@@ -26,7 +26,7 @@ public class ReadHoldingRegisters {
      * @return
      * @throws ModbusException
      */
-    public static String getReadHoldingMsg(int slaveId, int offset, int size,int dataType) throws ModbusException {
+    public static String readHolding(int slaveId, int offset, int size,int dataType) throws ModbusException {
         byte functionCode=FunctionCode.READ_HOLDING_REGISTERS;
         size=size* DataType.getRegisterCount(dataType);
         return Generate.getReadMsg(slaveId, functionCode, offset, size);

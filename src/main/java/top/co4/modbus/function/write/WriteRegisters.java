@@ -15,6 +15,16 @@ import java.io.IOException;
  * @date 2022/7/20 19:15
  */
 public class WriteRegisters {
+
+
+    /**
+     * @Description //TODO 生成写入多个寄存器报文
+     * @Date 2022/7/20 18:15
+     */
+    public static String writeRegisters(int slaveId,int offset,Object values,int dataType) throws ModbusException {
+        return Generate.getWritesMsg(slaveId,FunctionCode.WRITE_REGISTERS,offset,values,dataType);
+    }
+
     /**
      * @Description //TODO 写入多个寄存器
      * @Date 2022/7/20 18:15

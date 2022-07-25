@@ -1,6 +1,5 @@
 package top.co4.modbus.test;
 
-import lombok.extern.slf4j.Slf4j;
 import top.co4.modbus.code.DataType;
 import top.co4.modbus.exception.ModbusException;
 import top.co4.modbus.function.read.ReadCoilsRegisters;
@@ -11,17 +10,14 @@ import top.co4.modbus.function.write.WriteCoilRegisters;
 import top.co4.modbus.function.write.WriteCoilsRegisters;
 import top.co4.modbus.function.write.WriteRegister;
 import top.co4.modbus.function.write.WriteRegisters;
-import top.co4.modbus.module.Modbus;
 
 import java.io.IOException;
 import java.net.Socket;
-import java.util.List;
 
 /**
  * @author CodeXYW
  * @date 2022/7/17 8:23
  */
-@Slf4j
 public class Test {
 
     static Socket socket;
@@ -40,14 +36,8 @@ public class Test {
      * @Date 2022/7/19 18:13
      */
     public static void readCoils() throws IOException, ModbusException {
-        Modbus modbus = new Modbus();
-        modbus.setSlaveId(1);
-        modbus.setOffset(0);
-        modbus.setSocket(socket);
-        List<Boolean> booleans = ReadCoilsRegisters.readCoils(modbus);
-        for (Boolean aBoolean : booleans) {
-            System.out.println(aBoolean);
-        }
+        String s = ReadCoilsRegisters.readCoils(1, 0, 1);
+        System.out.println(s);
     }
 
     /***
@@ -55,47 +45,26 @@ public class Test {
      * @Date 2022/7/19 18:17
      */
     public static void readDiscreteInput() throws IOException, ModbusException {
-        Modbus modbus = new Modbus();
-        modbus.setSlaveId(1);
-        modbus.setOffset(0);
-        modbus.setSize(1);
-        modbus.setSocket(socket);
-        List<Boolean> booleans = ReadDiscreteInputRegisters.readDiscreteInput(modbus);
-        for (Boolean aBoolean : booleans) {
-            System.out.println(aBoolean);
-        }
+        String s = ReadDiscreteInputRegisters.readDiscreteInput(1, 0, 2);
+        System.out.println(s);
     }
 
     /**
      * @Description //TODO 读取输入型寄存器
      * @Date 2022/7/19 18:42
-     * 01 04 04 03 E8 00 00 7B F4
      */
     public static void readInput() throws ModbusException, IOException {
-        Modbus modbus = new Modbus();
-        modbus.setSlaveId(1);
-        modbus.setOffset(0);
-        modbus.setSize(3);
-        modbus.setSocket(socket);
-        modbus.setDataType(DataType.FLOAT);
-        Object o = ReadInputRegisters.readInput(modbus);
-        System.out.println(o);
+        String s = ReadInputRegisters.readInput(1, 0, 3, DataType.FLOAT);
+        System.out.println(s);
     }
 
     /**
      * @Description //TODO 读取保持型寄存器
      * @Date 2022/7/19 18:43
-     * 01 03 04 FF FF 00 01 3B D7
      */
     public static void readHolding() throws ModbusException, IOException {
-        Modbus modbus = new Modbus();
-        modbus.setSlaveId(1);
-        modbus.setOffset(0);
-        modbus.setSize(3);
-        modbus.setSocket(socket);
-        modbus.setDataType(DataType.FLOAT);
-        Object o = ReadHoldingRegisters.readHolding(modbus);
-        System.out.println(o);
+        String s = ReadHoldingRegisters.readHolding(1,0,3,DataType.FLOAT);
+        System.out.println(s);
     }
 
 
@@ -104,13 +73,8 @@ public class Test {
      * @Date 2022/7/20 19:03
      */
     public static void writeCoil() throws IOException, ModbusException {
-        Modbus modbus = new Modbus();
-        modbus.setSlaveId(1);
-        modbus.setOffset(0);
-        modbus.setSocket(socket);
-        modbus.setDataType(DataType.BOOLE);
-        boolean b = WriteCoilRegisters.writeCoil(modbus, true);
-        System.out.println(b);
+        String s = WriteCoilRegisters.writeCoil(1, 0, true);
+        System.out.println(s);
     }
 
     /**
@@ -118,13 +82,8 @@ public class Test {
      * @Date 2022/7/20 19:21
      */
     public static void writeRegister() throws IOException, ModbusException {
-        Modbus modbus = new Modbus();
-        modbus.setSlaveId(1);
-        modbus.setOffset(0);
-        modbus.setSocket(socket);
-        modbus.setDataType(DataType.INTEGER);
-        boolean b = WriteRegister.writeRegister(modbus, 2);
-        System.out.println(b);
+        String s = WriteRegister.writeRegister(1, 0, 2, DataType.INTEGER);
+        System.out.println(s);
     }
 
     /**
@@ -132,13 +91,8 @@ public class Test {
      * @Date 2022/7/20 19:21
      */
     public static void writeCoils() throws Exception {
-        Modbus modbus = new Modbus();
-        modbus.setSlaveId(1);
-        modbus.setOffset(1);
-        modbus.setSocket(socket);
-        modbus.setDataType(DataType.BOOLE);
-        boolean b = WriteCoilsRegisters.writeCoils(modbus, new boolean[]{false, true, true, true, true, true, true, true, true});
-        System.out.println(b);
+        String s = WriteCoilsRegisters.writeCoils(1, 1, new boolean[]{true, true, true, true, true, true, true, true, true});
+        System.out.println(s);
     }
 
     /**
@@ -146,13 +100,8 @@ public class Test {
      * @Date 2022/7/21 11:15
      */
     public static void writeRegistersFloat() throws IOException, ModbusException {
-        Modbus modbus = new Modbus();
-        modbus.setSlaveId(1);
-        modbus.setOffset(0);
-        modbus.setSocket(socket);
-        modbus.setDataType(DataType.FLOAT);
-        boolean b = WriteRegisters.writeRegisters(modbus, new float[]{1, 12, 5});
-        System.out.println(b);
+        String s = WriteRegisters.writeRegisters(1, 0, new float[]{1, 12, 5}, DataType.FLOAT);
+        System.out.println(s);
     }
 
     /**
@@ -160,26 +109,11 @@ public class Test {
      * @Date 2022/7/21 11:16
      */
     public static void writeRegistersInt() throws IOException, ModbusException {
-        Modbus modbus = new Modbus();
-        modbus.setSlaveId(1);
-        modbus.setOffset(0);
-        modbus.setSocket(socket);
-        modbus.setDataType(DataType.INTEGER);
-        boolean b = WriteRegisters.writeRegisters(modbus, new int[]{1, 12, 5});
-        System.out.println(b);
+        String s = WriteRegisters.writeRegisters(1, 0, new int[]{1, 12, 5}, DataType.INTEGER);
+        System.out.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
-//        readCoils();
-//        readHolding();
-//        readDiscreteInput();
-//        readInput();
-//        writeCoil();
-//        writeRegister();
-//        writeCoils();
-        writeRegistersInt();
-//       writeRegistersFloat();
-        System.out.println("欢迎使用MSocket");
+    public static void main(String[] args) throws IOException, ModbusException {
+        writeRegister();
     }
-
 }

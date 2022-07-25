@@ -19,14 +19,10 @@ import java.util.List;
 public class ReadDiscreteInputRegisters {
 
     /**
-     * TODO 生成读离散输入型寄存器报文
-     * @param slaveId 从站地址
-     * @param offset 寄存器地址
-     * @param size 读取的个数
-     * @return
-     * @throws ModbusException
+     * @Description //TODO 生成读离散输入型寄存器报文
+     * @Date 2022/7/25 16:44
      */
-    public static String getReadDiscreteInputMsg(int slaveId, int offset, int size) throws ModbusException {
+    public static String readDiscreteInput(int slaveId, int offset, int size) throws ModbusException {
         byte functionCode=FunctionCode.READ_DISCRETE_INPUTS;
         return Generate.getReadMsg(slaveId, functionCode, offset, size);
     }

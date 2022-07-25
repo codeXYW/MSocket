@@ -19,14 +19,10 @@ import java.io.IOException;
 public class ReadInputRegisters {
 
     /**
-     * TODO 生成读输入型寄存器报文
-     * @param slaveId 从站地址
-     * @param offset 寄存器地址
-     * @param size 读取的个数
-     * @return
-     * @throws ModbusException
+     * @Description //TODO 生成读输入型寄存器报文
+     * @Date 2022/7/25 16:45
      */
-    public static String getReadInputMsg(int slaveId, int offset, int size,int dataType) throws ModbusException {
+    public static String readInput(int slaveId, int offset, int size,int dataType) throws ModbusException {
         byte functionCode=FunctionCode.READ_INPUT_REGISTERS;
         //一个浮点数32位
         size=size* DataType.getRegisterCount(dataType);
